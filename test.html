@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>test</title>
+        <meta charset="utf-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            .taggle_menu{
+                width: 260px;
+                border:1px solid #333;
+            }
+            .taggle_menu .button{
+                text-align: center;  padding:8px 15px;
+                width:100%; border-bottom:1px solid #333;
+                cursor:pointer;
+            }
+            .taggle_menu a{text-decoration: none; color:#333;}
+            ul{list-style-type: none;}
+            .nav{
+                transition: height 1s linear;
+                height: 0px;
+                overflow: hidden;
+            }
+           /* hr tag animation*/
+            @keyframes show {
+            0%{
+                width:0px;
+            }
+            100%{
+                width:100%;
+            }
+            }
+
+            @keyframes hide {
+            0%{
+                width:100%;
+            }
+            100%{
+                width:0px;
+            }
+            }
+            hr{
+            animation:show 0.5s linear;
+            border-top:5px solid red;
+            }
+            .hide{
+                animation-name: show;
+                animation-duration: 0.5s;
+                animation-direction:reverse;
+                width: 0;
+            }
+          
+            code {
+            font-size:10vmin;
+            cursor: pointer;
+            }
+          
+
+        </style>
+
+
+    </head>
+    <body>
+
+        <h1>hr tag animation</h1>
+
+        <br>
+        <center>
+        <code>HR Tag Animation</code>
+        </center>
+        <hr>
+        <hr class="hide">
+
+        <div class="taggle_menu" style="display: none;">
+            <div class="button" id="button" onclick="myFunction('nav')">
+                <a href="#"> Lifestyle</a>
+            </div>
+            <div class="nav" id="nav"  style="height:100px;">
+                <ul>
+                    <li>შეთავაზებები</li>
+                    <li>შეთავაზებები2</li>
+                </ul>
+            </div>
+        </div>
+        <div class="taggle_menu">
+            <div class="button" id="button" onclick="myFunction('nav2')">
+                <a href="#"> სხვა მენიუ</a>
+            </div>
+            <div class="nav" id="nav2" >
+                <ul>
+                    <li>ლორემ</li>
+                    <li>იპსუმ</li>
+                </ul>
+            </div>
+        </div>
+        <div class="taggle_menu">
+            <div class="button" id="button" onclick="myFunction('nav3')">
+                <a href="#"> მენიუ 3</a>
+            </div>
+            <div class="nav" id="nav3" >
+                <ul>
+                    <li>რამე</li>
+                    <li>რუმე</li>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+        <script>
+            function myFunction(id) {
+
+                var dropdowns = document.getElementsByClassName("nav");
+                var i;
+                
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    openDropdown.style.height="0px";
+                    /*if (openDropdown.style.height === "0") {
+                    id = openDropdown.id;
+                    }else{
+                        id=0;
+                    }*/
+                }
+                
+                var x = document.getElementById(id);
+                if (x.style.height === '100px') {
+                    //dropdowns.style.height="0px";
+                    x.style.height = "0px";
+                } else {
+                    console.log(x.style.height);
+                    x.style.height = "100px";
+                }
+                }
+        </script>
+
+
+
+    </body>
+</html>

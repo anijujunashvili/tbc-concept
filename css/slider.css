@@ -1,0 +1,104 @@
+.swiper-container {
+  width: 100%;
+  height: 100%;
+
+}
+.swiper-slide {
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.swiper-wrapper{
+  padding-bottom: 38px;
+}
+.card{
+  width: 99%;
+  height: 390px;
+  border-radius: 8px;
+  border:1px solid #e1e4e5;
+  flex-direction: column;
+font-size: 14px;
+text-decoration: none;
+transition: box-shadow .4s ease-in-out, background-color .4s ease-in-out;
+display: flex;
+}
+.card:hover{
+  background-color: #fff;
+  box-shadow: 0 36px 40px -15px rgba(12,43,67,.07);
+}
+.main-image{
+  
+  max-height: none;
+height: -webkit-calc(100% + 30px);
+height: calc(100% + 30px);
+-webkit-transition: -webkit-transform 0.35s;
+transition: transform 0.35s;
+-webkit-transform: translate3d(0,0px, 0);
+transform: translate3d(0,0px,0);
+}
+.card:hover .main-image{
+  -webkit-transform: translate3d(0,-5px,0);
+transform: translate3d(0,-5px,0);
+}
+.card .slide-img{
+  border-top-left-radius:8px;
+  border-top-right-radius:8px;
+  position: relative;
+  overflow: hidden;
+}
+.logo-cont{
+  background-color: #fff;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top:16px;
+  right: 0;
+  height:56px;
+  width: 78px;
+}
+.card .slide-info{
+  grid-row-gap: 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 28px;
+  display: flex;
+  font-family: TBCBold, sans-serif;
+  
+}
+.card .text{
+  color: #6f787b;
+}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+  background-color: #182cc0;
+}
+.swiper-scrollbar-drag{
+  background: rgba(0,0,0,0.5);
+}
+.slider-next, .slider-prev{
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  color:#182cc0;
+}
+.slider-next{
+  right: 0px;
+}
+.slider-prev{
+  right: 40px;
+}
+.swiper-button-disabled{
+  color:#a5aaac;
+}
