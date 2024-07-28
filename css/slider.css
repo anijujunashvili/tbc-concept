@@ -20,7 +20,14 @@
   align-items: center;
 }
 .swiper-wrapper{
-  padding-bottom: 38px;
+  padding-bottom: 40px;
+}
+.products-swiper .swiper-wrapper{
+  padding-bottom: 52px;
+}
+
+.awards-swiper .swiper-wrapper{
+  padding-bottom: 52px;
 }
 .card{
   width: 99%;
@@ -28,11 +35,33 @@
   border-radius: 8px;
   border:1px solid #e1e4e5;
   flex-direction: column;
-font-size: 14px;
-text-decoration: none;
-transition: box-shadow .4s ease-in-out, background-color .4s ease-in-out;
-display: flex;
+  font-size: 14px;
+  text-decoration: none;
+  transition: border-color .4s ease-in-out, box-shadow .4s ease-in-out;
+  display: flex;
 }
+.products .card{
+  height: 410px;
+}
+.awards .card{
+  background-color: #fff;
+  display: flex;
+  grid-row-gap: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 28px;
+  height:270px;
+  border: 1px solid #fff;  
+  transition: box-shadow .4s ease-in-out, background-color .4s ease-in-out;
+}
+.awards .card .slide-info{
+  padding:0px;
+}
+.awards .card:hover{
+  border-color: #eef1f1;
+  box-shadow: 0 36px 40px -15px rgba(12, 43, 67, .07);
+}
+
 .card:hover{
   background-color: #fff;
   box-shadow: 0 36px 40px -15px rgba(12,43,67,.07);
@@ -51,11 +80,14 @@ transform: translate3d(0,0px,0);
   -webkit-transform: translate3d(0,-5px,0);
 transform: translate3d(0,-5px,0);
 }
+
 .card .slide-img{
   border-top-left-radius:8px;
   border-top-right-radius:8px;
   position: relative;
   overflow: hidden;
+  max-height: 210px;
+  width: 100%;
 }
 .logo-cont{
   background-color: #fff;
@@ -76,16 +108,73 @@ transform: translate3d(0,-5px,0);
   padding: 28px;
   display: flex;
   font-family: TBCBold, sans-serif;
-  
+  max-height: 180px;
+}
+.products .card .slide-info{
+  max-height:200px;
 }
 .card .text{
   color: #6f787b;
+  display: flex;
+  flex-direction: row;
+
+}
+.card-category{
+  display: flex;
+  font-size:12px;
+  text-transform:uppercase;
+  font-weight: 700;
+  margin:0px 12px 8px 0px;
+}
+.category-wrap:last-child{
+  margin-right:0px;
+}
+.products-swiper{
+  margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+}
+
+.awards-swiper{
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+}
+.products-swiper .swiper-scrollbar{
+  left:0px;
+}
+.awards-swiper .swiper-scrollbar{
+  left:0px;
+}
+.swiper-container .swiper-scrollbar{
+  left:0px;
+}
+.product-text{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width:100%;
+  font-family: TBCReg,sans-serif;
+  font-size:14px;
+  margin:0px;
+}
+.card .slide-info h3{
+  color:#141719;
+  font-size: 16px;
+  margin:0;
 }
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
   background-color: #182cc0;
 }
 .swiper-scrollbar-drag{
-  background: rgba(0,0,0,0.5);
+  background: #182cc0;
 }
 .slider-next, .slider-prev{
   position: absolute;
@@ -101,4 +190,40 @@ transform: translate3d(0,-5px,0);
 }
 .swiper-button-disabled{
   color:#a5aaac;
+}
+.awards-img{
+  height: 52px;
+  width:100%;
+}
+.awards-img img{
+  height:52px;
+
+}
+@media screen and (max-width: 991px){
+  .slider-next, .slider-prev{
+    display: none;
+  }
+  .swiper-pagination.swiper-pagination-progressbar{
+    width:100%;
+  }
+}
+@media screen and (max-width: 767px){
+  .card-title{
+    font-size:14px;
+  }
+}
+@media screen and (max-width: 479px){
+  .card .slide-info h3{
+    font-size:14px;
+  }
+  .products .product-text{
+    font-size:12px;
+  }
+  .card .slide-info{
+    padding:20px;
+  }
+  .footer-top{
+    padding-top:32px;
+    padding-bottom:32px;
+  }
 }
